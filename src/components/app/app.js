@@ -1,11 +1,13 @@
-import React, { Fragment } from "react";
+import React from "react";
 import Header from "components/header";
+import Wrapper from "components/layouts/wrapper";
 
-function App() {
+
+const App = () => {
   return (
-    <Fragment>
-      <Header />
-    </Fragment>
+      <Wrapper>
+          <Header/>
+      </Wrapper>
   );
 }
 
