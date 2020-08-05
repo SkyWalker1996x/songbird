@@ -1,9 +1,11 @@
-import React from 'react';
-
+import React, { Fragment } from "react";
+import Header from "components/header";
 
 function App() {
   return (
-    <h1>hello world</h1>
+    <Fragment>
+      <Header />
+    </Fragment>
   );
 }
 
