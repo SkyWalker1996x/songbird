@@ -5,7 +5,15 @@
     margin: 15px 0 5px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     font-size: 19px;
+    .logo {
+      width: 200px;
+      height: 55px;
+    }
+    .score {
+      font-weight: 500;
+    }
   }
   .stages {
     margin-bottom: 25px;
@@ -23,6 +31,9 @@
       background-color: $secondary-bg-color;
       line-height: 1.25;
       text-align: center;
+    }
+    .active {
+      background-color: $active-color;
     }
   }
 }

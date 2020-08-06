@@ -1,12 +1,15 @@
 import React from "react";
 import "styles/index.scss";
+import logo from "assets/imgs/songbird-logo.svg"
 
 const Header = () => {
   return (
     <header className="header">
       <div className="top-panel">
-        <div className="logo">SongBird</div>
-        <div>Score: 100</div>
+        <div >
+          <img className="logo" src={logo} alt="songbird-logo"/>
+        </div>
+        <div className="score">Score: 100</div>
       </div>
 
       <div className="stages">
