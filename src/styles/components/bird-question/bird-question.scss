@@ -1,0 +1,20 @@
+.question__inner {
+  padding: 16px;
+  margin-bottom: 25px;
+  display: flex;
+  background-color: $primary-bg-color;
+  border-radius: 2px;
+  .question__picture {
+    width: 200px;
+    height: 155px;
+    border-radius: 10px;
+  }
+  .list__group {
+    margin-left: 40px;
+  }
+  .audio-player {
+    margin: 10px 40px 8px 0;
+    width: 100%;
+    min-width: 100px;
+  }
+}

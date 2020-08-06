@@ -5,23 +5,23 @@ const audioItem =
 
 const BirdQuestion = () => {
   return (
-    <div>
-      <img src="https://picsum.photos/seed/picsum/200/155" alt="bird" />
-      <div>
-        <ul>
-          <li>******</li>
-          <li>
-            <div className="audio-player">
-              <audio controls>
-                <source
-                  src={audioItem}
-                  type="audio/ogg; codecs=vorbis"
-                />
-              </audio>
-            </div>
-          </li>
-        </ul>
-      </div>
+    <div className="question__inner">
+      <img
+        className="question__picture"
+        src="https://picsum.photos/seed/picsum/200/155"
+        alt="bird"
+      />
+
+      <ul className="list__group">
+        <li className="list__group__item">******</li>
+        <li className="list__group__item">
+          <div className="audio-player">
+            <audio controls>
+              <source src={audioItem} type="audio/ogg; codecs=vorbis" />
+            </audio>
+          </div>
+        </li>
+      </ul>
     </div>
   );
 };
