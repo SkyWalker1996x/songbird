@@ -1,31 +1,32 @@
 import React from "react";
+import "styles/index.scss";
 
 const Header = () => {
   return (
-    <header>
+    <header className="header">
       <div className="top-panel">
         <div className="logo">SongBird</div>
         <div>Score: 100</div>
       </div>
 
-      <div className="stage-info">
-        <li>
-          <button>1</button>
+      <div className="stages">
+        <li className="stage__item active">
+          1
         </li>
-        <li>
-          <button>2</button>
+        <li className="stage__item">
+          2
         </li>
-        <li>
-          <button>3</button>
+        <li className="stage__item">
+          3
         </li>
-        <li>
-          <button>4</button>
+        <li className="stage__item">
+          4
         </li>
-        <li>
-          <button>5</button>
+        <li className="stage__item">
+          5
         </li>
-        <li>
-          <button>6</button>
+        <li className="stage__item">
+          6
         </li>
       </div>
     </header>
