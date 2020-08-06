@@ -1,0 +1,15 @@
+.btn-up {
+  width: 100%;
+  margin: 25px 5px;
+  padding: 10px 12px;
+  border: 1px solid #555;
+  background-color: $primary-bg-color;
+  border-radius: 2px;
+  cursor: pointer;
+  color: $primary-font-color;
+  overflow: hidden;
+}
+
+.active {
+  background-color: $active-color;
+}

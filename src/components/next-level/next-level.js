@@ -1,7 +1,7 @@
 import React from "react";
 
 const NextLevel = () => {
-  return <button>Next Level</button>;
+  return <button className="btn-up">Next Level</button>;
 };
 
 export default NextLevel;
