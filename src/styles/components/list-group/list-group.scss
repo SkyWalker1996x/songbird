@@ -5,15 +5,8 @@
   flex-direction: column;
   list-style: none;
   .list__group__item {
+    padding: 1px;
     border: 1px solid #555;
-    border-right-width: 0;
-    border-left-width: 0;
     border-radius: 0;
-    &:first-child {
-      border-top-width: 0;
-    }
-    &:last-child {
-      border-bottom-width: 0;
-    }
   }
 }
