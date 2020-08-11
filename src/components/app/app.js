@@ -5,17 +5,36 @@ import BirdQuestion from "components/bird-question";
 import NextLevel from "components/next-level";
 import AnswerBlock from "../answer-block";
 
+import { birds } from "data/data";
+
 class App extends Component {
   state = {
     level: 1,
+    items: [],
   };
-  render() {
+
+  componentDidMount() {
     const { level } = this.state;
+    const items = this.extractItems(birds, level);
+    this.setState((state) => {
+      return {
+        ...state,
+        items,
+      };
+    });
+  }
+
+  extractItems = (arr, id) => {
+    return arr.filter((item) => item.area === id);
+  };
+
+  render() {
+    const { level, items } = this.state;
     return (
       <Wrapper>
         <Header level={level} />
         <BirdQuestion />
-        <AnswerBlock />
+        <AnswerBlock items={items}/>
         <NextLevel />
       </Wrapper>
     );

@@ -2,10 +2,10 @@ import React from "react";
 import AnswersList from "./answers-list";
 import BirdDescription from "./bird-description";
 
-const AnswerBlock = () => {
+const AnswerBlock = ({items}) => {
     return (
         <div className="answer__inner">
-            <AnswersList/>
+            <AnswersList items={items}/>
             <BirdDescription/>
         </div>
     )
