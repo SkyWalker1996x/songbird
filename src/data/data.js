@@ -1,3 +1,12 @@
+const stages = [
+  { id: 1, area: "Европа" },
+  { id: 2, area: "Азия" },
+  { id: 3, area: "С. Америка" },
+  { id: 4, area: "Африка" },
+  { id: 5, area: "Ю. Америка" },
+  { id: 6, area: "Океания" },
+];
+
 const birds = [
   {
     id: 1,
@@ -395,3 +404,5 @@ const birds = [
       "https://www.xeno-canto.org/sounds/uploaded/YDQKMZXDRL/XC528934-DM673057_Chukar01call_rau1_NoiseB.mp3",
   },
 ];
+
+export { stages, birds };
