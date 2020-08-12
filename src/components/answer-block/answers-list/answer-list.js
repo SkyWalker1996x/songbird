@@ -3,12 +3,16 @@ import React from "react";
 const AnswersList = ({ items, onSelectedAnswer, levelComplete }) => {
   const itemList = items.map((item) => {
     const { id, name } = item;
-    return (
+    return !levelComplete ? (
       <li
         className="list__group__item"
         key={id}
-        onClick={!levelComplete ? () => onSelectedAnswer(id) : () => {}}
+        onClick={() => onSelectedAnswer(id)}
       >
+        {name}
+      </li>
+    ) : (
+      <li className="list__group__item" key={id}>
         {name}
       </li>
     );
