@@ -6,4 +6,34 @@
   border: 1px solid #555;
   background-color: $primary-bg-color;
   border-radius: 2px;
+  .description__inner {
+    display: flex;
+    flex-direction: column;
+    .card {
+      display: flex;
+      .list__group {
+        width: 50%;
+        .list__group__item {
+          padding: 3px;
+          border-right-width: 0;
+          border-left-width: 0;
+          &:first-child {
+            border-top-width: 0;
+          }
+          &:last-child {
+            border-bottom-width: 0;
+          }
+          h4 {
+            font-size: 22px;
+          }
+        }
+      }
+
+    }
+  }
+  img {
+    width: 200px;
+    height: 155px;
+    margin-right: 32px;
+  }
 }

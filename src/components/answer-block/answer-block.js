@@ -6,7 +6,7 @@ const AnswerBlock = ({items}) => {
     return (
         <div className="answer__inner">
             <AnswersList items={items}/>
-            <BirdDescription/>
+            <BirdDescription />
         </div>
     )
 }

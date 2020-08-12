@@ -17,7 +17,8 @@ class App extends Component {
 
   componentDidMount() {
     const { level } = this.state;
-    const randomItem = Math.floor(Math.random() * 5);
+    const randomItem = Math.floor(Math.random() * 6);
+
     const items = this.extractItems(birds, level);
     this.setState((state) => {
       return {
@@ -38,7 +39,7 @@ class App extends Component {
       <Wrapper>
         <Header level={level} />
         <QuestionBlock levelComplete={levelComplete} item={item} />
-        <AnswerBlock items={items} />
+        <AnswerBlock items={items} item={item} />
         <NextLevel />
       </Wrapper>
     );
