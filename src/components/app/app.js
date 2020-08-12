@@ -13,6 +13,8 @@ class App extends Component {
     levelComplete: false,
     items: [],
     item: {},
+    selectedItem: null,
+    correctAnswer: null,
   };
 
   componentDidMount() {
@@ -33,13 +35,35 @@ class App extends Component {
     return arr.filter((item) => item.area === id);
   };
 
+  onSelectedAnswer = (id) => {
+    const correctAnswer = this.state.item.id === id;
+    let selectedItem;
+    this.state.items.forEach((item) => {
+      if (item.id === id) {
+        selectedItem = item;
+      }
+    });
+
+    this.setState((state) => {
+      return {
+        ...state,
+        correctAnswer,
+        selectedItem,
+      };
+    });
+  };
+
   render() {
-    const { level, levelComplete, items, item } = this.state;
+    const { level, levelComplete, items, item, selectedItem } = this.state;
     return (
       <Wrapper>
         <Header level={level} />
         <QuestionBlock levelComplete={levelComplete} item={item} />
-        <AnswerBlock items={items} item={item} />
+        <AnswerBlock
+          items={items}
+          selectedItem={selectedItem}
+          onSelectedAnswer={this.onSelectedAnswer}
+        />
         <NextLevel />
       </Wrapper>
     );

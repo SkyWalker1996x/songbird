@@ -1,9 +1,9 @@
 import React, { Fragment } from "react";
 
-const BirdDescription = ({ item }) => {
+const BirdDescription = ({ selectedItem }) => {
   return (
     <div className="description">
-      {item ? <Content item={item} /> : <Notification />}
+      {selectedItem ? <Content selectedItem={selectedItem} /> : <Notification />}
     </div>
   );
 };
@@ -17,8 +17,8 @@ const Notification = () => {
   );
 };
 
-const Content = ({ item }) => {
-  const { img, name, latinName, audio, description } = item;
+const Content = ({ selectedItem }) => {
+  const { img, name, latinName, audio, description } = selectedItem;
   return (
     <div className="description__inner">
       <div className="card">
