@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Header from "components/header";
 import Wrapper from "components/layouts/wrapper";
-import BirdQuestion from "components/bird-question";
+import QuestionBlock from "components/question-block";
 import NextLevel from "components/next-level";
 import AnswerBlock from "../answer-block";
 
@@ -10,16 +10,20 @@ import { birds } from "data/data";
 class App extends Component {
   state = {
     level: 1,
+    levelComplete: false,
     items: [],
+    item: {},
   };
 
   componentDidMount() {
     const { level } = this.state;
+    const randomItem = Math.floor(Math.random() * 5);
     const items = this.extractItems(birds, level);
     this.setState((state) => {
       return {
         ...state,
         items,
+        item: items[randomItem],
       };
     });
   }
@@ -29,12 +33,12 @@ class App extends Component {
   };
 
   render() {
-    const { level, items } = this.state;
+    const { level, levelComplete, items, item } = this.state;
     return (
       <Wrapper>
         <Header level={level} />
-        <BirdQuestion />
-        <AnswerBlock items={items}/>
+        <QuestionBlock levelComplete={levelComplete} item={item} />
+        <AnswerBlock items={items} />
         <NextLevel />
       </Wrapper>
     );
