@@ -1,10 +1,14 @@
 import React from "react";
 
-const AnswersList = ({ items, onSelectedAnswer }) => {
+const AnswersList = ({ items, onSelectedAnswer, levelComplete }) => {
   const itemList = items.map((item) => {
     const { id, name } = item;
     return (
-      <li className="list__group__item" key={id} onClick={() => onSelectedAnswer(id)}>
+      <li
+        className="list__group__item"
+        key={id}
+        onClick={!levelComplete ? () => onSelectedAnswer(id) : () => {}}
+      >
         {name}
       </li>
     );

@@ -36,7 +36,7 @@ class App extends Component {
   };
 
   onSelectedAnswer = (id) => {
-    const correctAnswer = this.state.item.id === id;
+    const levelComplete = this.state.item.id === id;
     let selectedItem;
     this.state.items.forEach((item) => {
       if (item.id === id) {
@@ -47,7 +47,7 @@ class App extends Component {
     this.setState((state) => {
       return {
         ...state,
-        correctAnswer,
+        levelComplete,
         selectedItem,
       };
     });
@@ -60,6 +60,7 @@ class App extends Component {
         <Header level={level} />
         <QuestionBlock levelComplete={levelComplete} item={item} />
         <AnswerBlock
+          levelComplete={levelComplete}
           items={items}
           selectedItem={selectedItem}
           onSelectedAnswer={this.onSelectedAnswer}
