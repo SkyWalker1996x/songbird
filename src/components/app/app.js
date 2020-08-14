@@ -20,7 +20,7 @@ class App extends Component {
   componentDidMount() {
     const { level } = this.state;
     const randomItem = Math.floor(Math.random() * 6);
-
+    console.log("DidMount");
     const items = this.extractItems(birds, level);
     this.setState((state) => {
       return {
@@ -31,7 +31,24 @@ class App extends Component {
     });
   }
 
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if(this.state.level !== prevState.level) {
+      console.log('DidUpdate')
+      const { level } = this.state;
+      const randomItem = Math.floor(Math.random() * 6);
+      const items = this.extractItems(birds, level);
+      this.setState((state) => {
+        return {
+          ...state,
+          items,
+          item: items[randomItem],
+        };
+      });
+    }
+  }
+
   extractItems = (arr, id) => {
+    console.log(id);
     return arr.filter((item) => item.area === id);
   };
 
@@ -53,7 +70,19 @@ class App extends Component {
     });
   };
 
+  onNextLevel = () => {
+    this.setState((state) => {
+      return {
+        ...state,
+        level: state.level + 1,
+        levelComplete: false,
+        selectedItem: null,
+      };
+    });
+  };
+
   render() {
+    console.log('render');
     const { level, levelComplete, items, item, selectedItem } = this.state;
     return (
       <Wrapper>
@@ -65,7 +94,10 @@ class App extends Component {
           selectedItem={selectedItem}
           onSelectedAnswer={this.onSelectedAnswer}
         />
-        <NextLevel />
+        <NextLevel
+          levelComplete={levelComplete}
+          onNextLevel={this.onNextLevel}
+        />
       </Wrapper>
     );
   }
