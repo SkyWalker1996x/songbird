@@ -1,9 +1,10 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import Header from "components/header";
 import Wrapper from "components/layouts/wrapper";
 import QuestionBlock from "components/question-block";
 import NextLevel from "components/next-level";
 import AnswerBlock from "../answer-block";
+import CongratulationsBlock from "components/congratulations-block";
 
 import { birds } from "data/data";
 
@@ -32,8 +33,8 @@ class App extends Component {
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
-    if(this.state.level !== prevState.level) {
-      console.log('DidUpdate')
+    if (this.state.level !== prevState.level) {
+      console.log("DidUpdate");
       const { level } = this.state;
       const randomItem = Math.floor(Math.random() * 6);
       const items = this.extractItems(birds, level);
@@ -82,11 +83,10 @@ class App extends Component {
   };
 
   render() {
-    console.log('render');
+    console.log("render");
     const { level, levelComplete, items, item, selectedItem } = this.state;
-    return (
-      <Wrapper>
-        <Header level={level} />
+    const Quiz = (
+      <Fragment>
         <QuestionBlock levelComplete={levelComplete} item={item} />
         <AnswerBlock
           levelComplete={levelComplete}
@@ -98,6 +98,12 @@ class App extends Component {
           levelComplete={levelComplete}
           onNextLevel={this.onNextLevel}
         />
+      </Fragment>
+    );
+    return (
+      <Wrapper>
+        <Header level={level} />
+        {level > 6 ? <CongratulationsBlock /> : Quiz}
       </Wrapper>
     );
   }
