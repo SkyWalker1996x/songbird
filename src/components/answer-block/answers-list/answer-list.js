@@ -1,20 +1,16 @@
 import React from "react";
 import CircleIndicator from "components/answer-block/circle-indicator";
 
-const AnswersList = ({ items, onSelectedAnswer, levelComplete }) => {
+const AnswersList = ({ items, onSelectedItem}) => {
   const itemList = items.map((item) => {
-    const { id, name } = item;
-    return !levelComplete ? (
+    const { id, name, statusAnswer } = item;
+    return (
       <li
         className="list__group__item"
         key={id}
-        onClick={() => onSelectedAnswer(id)}
+        onClick={() => onSelectedItem(id)}
       >
-        <CircleIndicator/>
-        {name}
-      </li>
-    ) : (
-      <li className="list__group__item" key={id}>
+        <CircleIndicator statusAnswer={statusAnswer} />
         {name}
       </li>
     );

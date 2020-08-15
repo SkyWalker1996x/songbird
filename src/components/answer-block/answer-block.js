@@ -6,13 +6,13 @@ const AnswerBlock = ({
   levelComplete,
   items,
   selectedItem,
-  onSelectedAnswer,
+  onSelectedItem,
 }) => {
   return (
     <div className="answer__inner">
       <AnswersList
         items={items}
-        onSelectedAnswer={onSelectedAnswer}
+        onSelectedItem={onSelectedItem}
         levelComplete={levelComplete}
       />
       <BirdDescription selectedItem={selectedItem} />

@@ -7,7 +7,7 @@ const CircleIndicator = ({ statusAnswer }) => {
       : statusAnswer === "wrong"
       ? "circle wrong"
       : "circle";
-  return <div className={styles}></div>;
+  return <div className={styles}>{}</div>;
 };
 
 export default CircleIndicator;

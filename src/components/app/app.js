@@ -15,7 +15,6 @@ class App extends Component {
     items: [],
     questionItem: {},
     selectedItem: null,
-    correctAnswer: null,
   };
 
   componentDidMount() {
@@ -57,22 +56,38 @@ class App extends Component {
       });
   };
 
-  onSelectedAnswer = (id) => {
+  onSelectedItem = (id) => {
     const { items, questionItem } = this.state;
-    const complete = questionItem.id === id;
+    const levelComplete = questionItem.id === id;
     let selectedItem;
 
-    items.forEach((element) => {
-      if (element.id === id) {
-        element.statusAnswer = questionItem.id === id ? "correct" : "wrong";
-        selectedItem = element;
+    items.forEach((item) => {
+      if (item.id === id) {
+        item.statusAnswer = levelComplete ? "correct" : "wrong";
+        selectedItem = item;
       }
     });
 
     this.setState((state) => {
       return {
         ...state,
-        levelComplete: complete,
+        levelComplete,
+        selectedItem,
+      };
+    });
+  };
+
+  onSelectedItemWithAnswer = (id) => {
+    let selectedItem;
+    this.state.items.forEach((item) => {
+      if (item.id === id) {
+        selectedItem = item;
+      }
+    });
+
+    this.setState((state) => {
+      return {
+        ...state,
         selectedItem,
       };
     });
@@ -90,16 +105,27 @@ class App extends Component {
   };
 
   render() {
-    console.log("render");
-    const { level, levelComplete, items, questionItem, selectedItem } = this.state;
+    const {
+      level,
+      levelComplete,
+      items,
+      questionItem,
+      selectedItem,
+    } = this.state;
+
     const Quiz = (
       <Fragment>
-        <QuestionBlock levelComplete={levelComplete} questionItem={questionItem} />
+        <QuestionBlock
+          levelComplete={levelComplete}
+          questionItem={questionItem}
+        />
         <AnswerBlock
           levelComplete={levelComplete}
           items={items}
           selectedItem={selectedItem}
-          onSelectedAnswer={this.onSelectedAnswer}
+          onSelectedItem={
+            levelComplete ? this.onSelectedItemWithAnswer : this.onSelectedItem
+          }
         />
         <NextLevel
           levelComplete={levelComplete}
