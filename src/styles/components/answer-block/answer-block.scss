@@ -6,11 +6,26 @@
     background-color: $primary-bg-color;
     border-radius: 2px;
     .list__group__item {
+      display: flex;
+      align-items: center;
       padding: 20px 13px;
       cursor: pointer;
       &:hover {
         background-color: darken($primary-font-color,70%);
       }
+    }
+    .circle {
+      width: 10px;
+      height: 10px;
+      margin: 0 10px;
+      background-color: darken($primary-font-color,70%);
+      border-radius: 50%;
+    }
+    .correct {
+      background-color: #00b300;
+    }
+    .wrong {
+      background-color: #e62e00;
     }
   }
 }

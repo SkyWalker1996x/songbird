@@ -1,4 +1,5 @@
 import React from "react";
+import CircleIndicator from "components/answer-block/circle-indicator";
 
 const AnswersList = ({ items, onSelectedAnswer, levelComplete }) => {
   const itemList = items.map((item) => {
@@ -9,6 +10,7 @@ const AnswersList = ({ items, onSelectedAnswer, levelComplete }) => {
         key={id}
         onClick={() => onSelectedAnswer(id)}
       >
+        <CircleIndicator/>
         {name}
       </li>
     ) : (
