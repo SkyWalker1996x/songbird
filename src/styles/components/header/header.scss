@@ -28,12 +28,12 @@
     .stage__item {
       flex: auto;
       padding: 8px 12px;
-      background-color: $secondary-bg-color;
+      background-color: $active-color;
       line-height: 1.25;
       text-align: center;
     }
     .active {
-      background-color: $active-color;
+      background-color: $secondary-bg-color;
     }
   }
 }
