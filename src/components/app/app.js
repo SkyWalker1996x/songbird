@@ -13,7 +13,7 @@ class App extends Component {
     level: 1,
     levelComplete: false,
     items: [],
-    item: {},
+    questionItem: {},
     selectedItem: null,
     correctAnswer: null,
   };
@@ -27,7 +27,7 @@ class App extends Component {
       return {
         ...state,
         items,
-        item: items[randomItem],
+        questionItem: items[randomItem],
       };
     });
   }
@@ -42,7 +42,7 @@ class App extends Component {
         return {
           ...state,
           items,
-          item: items[randomItem],
+          questionItem: items[randomItem],
         };
       });
     }
@@ -50,22 +50,29 @@ class App extends Component {
 
   extractItems = (arr, id) => {
     console.log(id);
-    return arr.filter((item) => item.area === id);
+    return arr
+      .filter((item) => item.area === id)
+      .map((item) => {
+        return { ...item, statusAnswer: "default" };
+      });
   };
 
   onSelectedAnswer = (id) => {
-    const levelComplete = this.state.item.id === id;
+    const { items, questionItem } = this.state;
+    const complete = questionItem.id === id;
     let selectedItem;
-    this.state.items.forEach((item) => {
-      if (item.id === id) {
-        selectedItem = item;
+
+    items.forEach((element) => {
+      if (element.id === id) {
+        element.statusAnswer = questionItem.id === id ? "correct" : "wrong";
+        selectedItem = element;
       }
     });
 
     this.setState((state) => {
       return {
         ...state,
-        levelComplete,
+        levelComplete: complete,
         selectedItem,
       };
     });
@@ -84,10 +91,10 @@ class App extends Component {
 
   render() {
     console.log("render");
-    const { level, levelComplete, items, item, selectedItem } = this.state;
+    const { level, levelComplete, items, questionItem, selectedItem } = this.state;
     const Quiz = (
       <Fragment>
-        <QuestionBlock levelComplete={levelComplete} item={item} />
+        <QuestionBlock levelComplete={levelComplete} questionItem={questionItem} />
         <AnswerBlock
           levelComplete={levelComplete}
           items={items}

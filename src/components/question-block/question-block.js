@@ -1,8 +1,8 @@
 import React from "react";
 import abstractLogo from "assets/imgs/bird-abstract-logo.jpg"
 
-const QuestionBlock = ({ item, levelComplete }) => {
-  const { name, audio, img } = item;
+const QuestionBlock = ({ questionItem, levelComplete }) => {
+  const { name, audio, img } = questionItem;
   const itemImage = levelComplete ? img : abstractLogo;
   const itemName = levelComplete ? name : '******';
 
