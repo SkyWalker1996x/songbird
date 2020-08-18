@@ -1,7 +1,7 @@
 import React from "react";
 import Wrapper from "components/layouts/wrapper";
 
-const CongratulationsBlock = ({ totalScore }) => {
+const CongratulationsBlock = ({ totalScore, onStartLevel }) => {
   return (
     <Wrapper>
       <div className="congratulations">
@@ -14,7 +14,7 @@ const CongratulationsBlock = ({ totalScore }) => {
             </p>
           </div>
           <div className="congratulations__button">
-            <button>Попробовать еще раз!</button>
+            <button onClick={() => onStartLevel()}>Попробовать еще раз!</button>
           </div>
         </div>
       </div>

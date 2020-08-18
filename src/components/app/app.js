@@ -111,6 +111,20 @@ class App extends Component {
     });
   };
 
+  onStartLevel = () => {
+    this.setState((state) => {
+      return {
+        ...state,
+        level: 1,
+        levelComplete: false,
+        selectedItem: null,
+        questionItem: {},
+        totalScore: 0,
+        localScore: 5,
+      };
+    });
+  };
+
   render() {
     const {
       level,
@@ -144,7 +158,16 @@ class App extends Component {
     return (
       <Wrapper>
         <Header level={level} totalScore={totalScore} />
-        {level > 6 ? <CongratulationsBlock totalScore={totalScore} /> : Quiz}
+
+        {level > 6 ? (
+          <CongratulationsBlock
+            totalScore={totalScore}
+            onStartLevel={this.onStartLevel}
+          />
+        ) : (
+          Quiz
+        )}
+
       </Wrapper>
     );
   }
