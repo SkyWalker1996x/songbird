@@ -160,17 +160,14 @@ class App extends Component {
       <Wrapper>
         <Header level={level} totalScore={totalScore} />
 
-        {/*{level > 6 ? (
+        {level > 6 ? (
           <CongratulationsBlock
             totalScore={totalScore}
             onStartLevel={this.onStartLevel}
           />
         ) : (
           Quiz
-        )}*/}
-
-        <Player/>
-
+        )}
       </Wrapper>
     );
   }

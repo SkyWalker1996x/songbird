@@ -12,7 +12,8 @@
     .card {
       display: flex;
       .list__group {
-        width: 50%;
+        width: 100%;
+        margin-right: 0;
         .list__group__item {
           padding: 3px;
           border-right-width: 0;
@@ -25,6 +26,9 @@
           }
           h4 {
             font-size: 22px;
+          }
+          .audio-player {
+            width: 100%;
           }
         }
       }
