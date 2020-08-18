@@ -7,6 +7,7 @@ import AnswerBlock from "../answer-block";
 import CongratulationsBlock from "components/congratulations-block";
 
 import { birds } from "data/data";
+import Player from "../player";
 
 class App extends Component {
   state = {
@@ -159,14 +160,16 @@ class App extends Component {
       <Wrapper>
         <Header level={level} totalScore={totalScore} />
 
-        {level > 6 ? (
+        {/*{level > 6 ? (
           <CongratulationsBlock
             totalScore={totalScore}
             onStartLevel={this.onStartLevel}
           />
         ) : (
           Quiz
-        )}
+        )}*/}
+
+        <Player/>
 
       </Wrapper>
     );
