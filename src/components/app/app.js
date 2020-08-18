@@ -15,6 +15,8 @@ class App extends Component {
     items: [],
     questionItem: {},
     selectedItem: null,
+    totalScore: 0,
+    localScore: 5,
   };
 
   componentDidMount() {
@@ -69,8 +71,12 @@ class App extends Component {
     });
 
     this.setState((state) => {
+      const { localScore, totalScore } = this.state;
+
       return {
         ...state,
+        localScore: levelComplete ? localScore : localScore - 1,
+        totalScore: levelComplete ? totalScore + localScore : totalScore,
         levelComplete,
         selectedItem,
       };
@@ -100,6 +106,7 @@ class App extends Component {
         level: state.level + 1,
         levelComplete: false,
         selectedItem: null,
+        localScore: 5,
       };
     });
   };
@@ -111,6 +118,7 @@ class App extends Component {
       items,
       questionItem,
       selectedItem,
+      totalScore,
     } = this.state;
 
     const Quiz = (
@@ -135,8 +143,8 @@ class App extends Component {
     );
     return (
       <Wrapper>
-        <Header level={level} />
-        {level > 6 ? <CongratulationsBlock /> : Quiz}
+        <Header level={level} totalScore={totalScore} />
+        {level > 6 ? <CongratulationsBlock totalScore={totalScore} /> : Quiz}
       </Wrapper>
     );
   }
