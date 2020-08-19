@@ -25,13 +25,11 @@ const QuestionBlock = ({ questionItem, levelComplete }) => {
         </li>
         <li className="list__group__item">
           <div className="audio-player">
-            {/*<audio controls>
-              <source src={audio} type="audio/ogg; codecs=vorbis" />
-            </audio>*/}
             <Player
               audio={audio}
               customProgressBarSection={customProgressBarSection}
               autoPlayAfterSrcChange={autoPlayAfterSrcChange}
+              levelComplete={levelComplete}
             />
           </div>
         </li>
