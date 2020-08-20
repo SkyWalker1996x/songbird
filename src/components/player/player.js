@@ -20,11 +20,12 @@ class Player extends Component {
       audio,
       customProgressBarSection,
       autoPlayAfterSrcChange,
+      autoPlay,
     } = this.props;
     return (
       <AudioPlayer
         src={audio}
-        autoPlay={false}
+        autoPlay={autoPlay || false}
         autoPlayAfterSrcChange={autoPlayAfterSrcChange}
         layout={"horizontal-reverse"}
         showJumpControls={false}
