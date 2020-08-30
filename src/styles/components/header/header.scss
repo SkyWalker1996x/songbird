@@ -1,0 +1,39 @@
+.header {
+  margin-top: 5px;
+  flex-direction: column;
+  .top-panel {
+    margin: 15px 0 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 19px;
+    .logo {
+      width: 200px;
+      height: 55px;
+    }
+    .score {
+      font-weight: 500;
+    }
+  }
+  .stages {
+    margin-bottom: 25px;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-radius: 5px;
+    overflow: hidden;
+    list-style: none;
+    font-size: 15px;
+    .stage__item {
+      flex: auto;
+      padding: 10px 20px;
+      background-color: $active-color;
+      line-height: 1.25;
+      text-align: center;
+    }
+    .active {
+      background-color: $secondary-bg-color;
+    }
+  }
+}

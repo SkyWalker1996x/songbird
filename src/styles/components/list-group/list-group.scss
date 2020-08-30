@@ -1,0 +1,12 @@
+.list__group {
+  padding-left: 0;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  .list__group__item {
+    padding: 1px;
+    border: 1px solid #555;
+    border-radius: 0;
+  }
+}

@@ -1,0 +1,39 @@
+.answer__inner {
+  display: flex;
+  justify-content: space-between;
+
+  .list__group {
+    width: 45%;
+    margin-right: 25px;
+    border-radius: 2px;
+    .list__group__item {
+      display: flex;
+      align-items: center;
+      padding: 20px 13px;
+      cursor: pointer;
+      background-color: $primary-bg-color;
+      &:hover {
+        background-color: darken($primary-font-color, 70%);
+      }
+    }
+    .circle {
+      width: 10px;
+      height: 10px;
+      margin: 0 10px;
+      background-color: darken($primary-font-color, 70%);
+      border-radius: 50%;
+    }
+    .correct {
+      background-color: #00b300;
+    }
+    .wrong {
+      background-color: #e62e00;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    .list__group {
+      width: 100%;
+    }
+  }
+}
