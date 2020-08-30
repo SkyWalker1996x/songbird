@@ -6,11 +6,25 @@
   border: 1px solid #555;
   background-color: $primary-bg-color;
   border-radius: 2px;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    margin-left: 0;
+  }
   .description__inner {
     display: flex;
     flex-direction: column;
     .card {
       display: flex;
+      @media screen and (max-width: 992px){
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .list__group__item {
+          text-align: center;
+          flex-direction: column;
+          justify-content: center;
+        }
+      }
       .list__group {
         width: 100%;
         margin-right: 0;

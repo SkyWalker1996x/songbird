@@ -39,9 +39,9 @@ const Content = ({ selectedItem }) => {
   return (
     <div className="description__inner">
       <div className="card">
-        <div>
+
           <img className="question__picture" src={img} alt="bird" />
-        </div>
+
 
         <ul className="list__group">
           <li className="list__group__item">
