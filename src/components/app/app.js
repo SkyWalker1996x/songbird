@@ -82,7 +82,7 @@ class App extends Component {
     });
   };
 
-  onSelectedItemWithAnswer = (id) => {
+  onRepeatedSelectedItem = (id) => {
     let selectedItem;
     this.state.items.forEach((item) => {
       if (item.id === id) {
@@ -144,9 +144,8 @@ class App extends Component {
           levelComplete={levelComplete}
           items={items}
           selectedItem={selectedItem}
-          onSelectedItem={
-            levelComplete ? this.onSelectedItemWithAnswer : this.onSelectedItem
-          }
+          onSelectedItem={this.onSelectedItem}
+          onRepeatedSelectedItem={this.onRepeatedSelectedItem}
         />
         <NextLevel
           levelComplete={levelComplete}

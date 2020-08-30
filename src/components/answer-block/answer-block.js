@@ -7,12 +7,14 @@ const AnswerBlock = ({
   items,
   selectedItem,
   onSelectedItem,
+  onRepeatedSelectedItem,
 }) => {
   return (
     <div className="answer__inner">
       <AnswersList
         items={items}
         onSelectedItem={onSelectedItem}
+        onRepeatedSelectedItem={onRepeatedSelectedItem}
         levelComplete={levelComplete}
       />
       <BirdDescription selectedItem={selectedItem} />
