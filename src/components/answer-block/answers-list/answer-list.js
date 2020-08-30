@@ -5,13 +5,17 @@ import correct from "assets/sounds/correct.mp3";
 import wrong from "assets/sounds/wrong.mp3";
 
 const AnswersList = ({ items, onSelectedItem }) => {
+  const onSelectedItemWrong = () => {
+    alert(`Вы уже выбирали данный вариант! Выберите другой, пожалуйста!`)
+  }
+
   const itemList = items.map((item) => {
     const { id, name, statusAnswer } = item;
     return (
       <li
         className="list__group__item"
         key={id}
-        onClick={() => onSelectedItem(id)}
+        onClick={statusAnswer === 'wrong' ? () => onSelectedItemWrong() : () => onSelectedItem(id)}
       >
 
         <CircleIndicator statusAnswer={statusAnswer} />
