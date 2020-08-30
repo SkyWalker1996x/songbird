@@ -17,8 +17,8 @@ const BirdDescription = ({ selectedItem }) => {
 const Notification = () => {
   return (
     <Fragment>
-      <p>Listen the player</p>
-      <p>Choose a bird from the list</p>
+      <p>Прослушайте аудио</p>
+      <p>Выберите птицу из списка</p>
     </Fragment>
   );
 };
