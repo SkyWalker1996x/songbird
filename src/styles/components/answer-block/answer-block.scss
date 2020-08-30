@@ -4,13 +4,13 @@
   .list__group {
     width: 45%;
     margin-right: 25px;
-    background-color: $primary-bg-color;
     border-radius: 2px;
     .list__group__item {
       display: flex;
       align-items: center;
       padding: 20px 13px;
       cursor: pointer;
+      background-color: $primary-bg-color;
       &:hover {
         background-color: darken($primary-font-color,70%);
       }
