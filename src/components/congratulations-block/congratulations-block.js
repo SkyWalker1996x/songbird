@@ -16,7 +16,7 @@ const CongratulationsBlock = ({ totalScore, onStartLevel }) => {
   const maxScore = (
     <Fragment>
       <p>Славная победа!</p>
-      <p>Вы набрали максимальный бал!</p>
+      <p>Вы набрали максимальный балл!</p>
       <p>
         Птицы высоко ценят Ваши знания о них и возлагают на Вас огромные
         надежды!

@@ -31,4 +31,15 @@
       }
     }
   }
+  @media screen and (max-width: 620px) {
+    .congratulations__inner {
+      h1 {
+        font-size: 34px;
+        font-weight: 300;
+      }
+      p {
+        font-size: 12px;
+      }
+    }
+  }
 }
