@@ -1,6 +1,7 @@
 .answer__inner {
   display: flex;
   justify-content: space-between;
+
   .list__group {
     width: 45%;
     margin-right: 25px;
@@ -12,14 +13,14 @@
       cursor: pointer;
       background-color: $primary-bg-color;
       &:hover {
-        background-color: darken($primary-font-color,70%);
+        background-color: darken($primary-font-color, 70%);
       }
     }
     .circle {
       width: 10px;
       height: 10px;
       margin: 0 10px;
-      background-color: darken($primary-font-color,70%);
+      background-color: darken($primary-font-color, 70%);
       border-radius: 50%;
     }
     .correct {
@@ -27,6 +28,12 @@
     }
     .wrong {
       background-color: #e62e00;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    .list__group {
+      width: 100%;
     }
   }
 }
