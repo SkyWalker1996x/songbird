@@ -7,11 +7,11 @@ const QuestionBlock = ({ questionItem, levelComplete }) => {
   const { name, audio, img } = questionItem;
   const itemImage = levelComplete ? img : abstractLogo;
   const itemName = levelComplete ? name : "******";
-  const customProgressBarSection = [
+  const customProgressBarSection = [RHAP_UI.MAIN_CONTROLS, RHAP_UI.PROGRESS_BAR,];
+  const customControlsSection = [
     RHAP_UI.CURRENT_TIME,
-    RHAP_UI.PROGRESS_BAR,
-    RHAP_UI.DURATION,
     RHAP_UI.VOLUME,
+    RHAP_UI.DURATION,
   ];
   const autoPlayAfterSrcChange = false;
 
@@ -28,6 +28,7 @@ const QuestionBlock = ({ questionItem, levelComplete }) => {
             <Player
               audio={audio}
               customProgressBarSection={customProgressBarSection}
+              customControlsSection={customControlsSection}
               autoPlayAfterSrcChange={autoPlayAfterSrcChange}
               levelComplete={levelComplete}
             />

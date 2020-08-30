@@ -25,7 +25,15 @@ const Notification = () => {
 
 const Content = ({ selectedItem }) => {
   const { img, name, latinName, audio, description } = selectedItem;
-  const customProgressBarSection = [RHAP_UI.PROGRESS_BAR, RHAP_UI.VOLUME];
+  const customProgressBarSection = [
+    RHAP_UI.MAIN_CONTROLS,
+    RHAP_UI.PROGRESS_BAR,
+  ];
+  const customControlsSection = [
+    RHAP_UI.CURRENT_TIME,
+    RHAP_UI.VOLUME,
+    RHAP_UI.DURATION,
+  ];
   const autoPlayAfterSrcChange = false;
 
   return (
@@ -40,16 +48,16 @@ const Content = ({ selectedItem }) => {
             <h4>{name}</h4>
           </li>
           <li className="list__group__item">{latinName}</li>
-          <li className="list__group__item">
-            <div className="audio-player">
-              <Player
-                audio={audio}
-                customProgressBarSection={customProgressBarSection}
-                autoPlayAfterSrcChange={autoPlayAfterSrcChange}
-              />
-            </div>
-          </li>
+
         </ul>
+      </div>
+      <div className="audio-player">
+        <Player
+            audio={audio}
+            customProgressBarSection={customProgressBarSection}
+            customControlsSection={customControlsSection}
+            autoPlayAfterSrcChange={autoPlayAfterSrcChange}
+        />
       </div>
       <div>{description}</div>
     </div>

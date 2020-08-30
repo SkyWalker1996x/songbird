@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import AudioPlayer, { RHAP_UI } from "react-h5-audio-player";
+import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
 
 class Player extends Component {
@@ -21,16 +21,17 @@ class Player extends Component {
       customProgressBarSection,
       autoPlayAfterSrcChange,
       autoPlay,
+      customControlsSection
     } = this.props;
     return (
       <AudioPlayer
         src={audio}
         autoPlay={autoPlay || false}
         autoPlayAfterSrcChange={autoPlayAfterSrcChange}
-        layout={"horizontal-reverse"}
+        layout={"stacked"}
         showJumpControls={false}
         customProgressBarSection={customProgressBarSection}
-        customControlsSection={[RHAP_UI.MAIN_CONTROLS]}
+        customControlsSection={customControlsSection}
         ref={this.player}
       />
     );
